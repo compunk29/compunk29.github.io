@@ -32,30 +32,46 @@
                 color: rgb(58, 96, 97);
                 background-color: rgb(205, 250, 235);
             }
-            .table-heading {
-                font-family: "Major Mono Display", "Regular 400", monospace;
-                font-size: 20px;
-                text-align: center;
-                text-shadow: 1px 1px 5px rgb(57, 117, 54);
-                width: 200px;
-                height: 100px;
-                margin: auto auto auto auto;
-                display: inline-block;
-                color: rgb(155, 209, 206);
-                background-color: rgba(25, 61, 36, 0.5);
+            /* ********[[Main Table CSS]]********* */
+            .table-wrap {
+                display: flex;
+                overflow-x: scroll;
+                margin-right: auto;
+                margin-left: auto;
             }
-            .table-body {
-                font-family: "Syne Mono", "Regular 400", monospace;
+            .table {
+                min-width: 800px;   
+            }
+            .table-header, .table-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr 2fr;
+            }
+            
+                /*font-family: "Major Mono Display", "Regular 400", monospace;
+                    font-size: 20px;
+                    text-align: center;
+                    text-shadow: 1px 1px 5px rgb(57, 117, 54);*/
+            
+            .cell {
+                padding: 0.5rem 1rem 0.5rem 1rem;
+            }
+            
+            /*font-family: "Syne Mono", "Regular 400", monospace;
                 font-size: 17px;
                 text-align: center;
-                text-shadow: 1px 1px 6px rgb(255, 255, 255);
-                width: 200px;
-                height: 150px;
-                margin: auto, auto, auto, auto;
-                display: inline-block;
-                color: rgb(0, 0, 0);
-                background-color: rgba(87, 97, 88, 0.5);
+                text-shadow: 1px 1px 6px rgb(255, 255, 255);*/
+            /* ********[[Main Table CSS]]********* */
+            /* ********[[Border CSS]]********* */
+            .table {
+                border: 4px solid red;
             }
+            .table-header, .table-row:not(:last-child) {
+                border-bottom: 1px solid red;
+            }
+            .table-header, .cell:not(:last-child), .table-row, .cell:not(:last-child) {
+                border-right: 1px solid red;
+            }
+            /* ********[[Border CSS]]********* */
             .subtitle {
                 font-family: "Share Tech Mono", "Regular 400", monospace;
                 text-align: center;
@@ -109,17 +125,17 @@
         <!-- Introductory Paragraph -->
         <p class="paragraph">So, <em>who am I?</em> Well, I have a handful of nametags across the web, but in here, <strong>you can call me compunk.</strong> I have to get this justified text sorted out some day. Anyways, <strong>my main interests include: Roblox, Left 4 Dead 2, Punk Music</strong>(as other genres), <strong>Drawing & Painting, Philosophy</strong>(politics are a must, ew), <strong>Animals & Bugs, and Coding!</strong>(duh). I'm not going to describe every single thing about me right away -- I'd rather let those details clear in between entries as I give my <em>sometimes way too long</em> opinions and insights on my experiences with these and other topics. I'm living my frustrated dream of being a popular personal blog from the 90s - 2000s, so if you want to fuel my ego, <strong>please give me attention</strong> while I try to update my blog regularly (◕‿◕✿)</p>
         <!-- Table of Contents -->
-        <div class= "table-heading">
-            <p>entries</p>
-            <p>date</p>
-        </div>
-        <div class= "table-body">
-            <a href="#day1">day 1</a>
-            <p>14/10/2021</p>
-        </div>
-        <div class ="table-body">
-            <a href="#day2">day 2</a>
-            <p>dd/mm/yyyy</p>
+        <div class= "table-wrap">
+            <div class= "table">
+                <div class= "table-header">
+                    <div class= "cell"><p>entry</p></div>
+                    <div class= "cell"><p>date</p></div>
+                </div>
+                <div class= "table-row">
+                    <div class= "cell"><a href="#day1">day 1</a></div>
+                    <div class= "cell"><p>14/10/2021</p></div>
+                </div>
+            </div>
         </div>
         <!-- Copy Paste Start -->
         <!-- Day Reference Point -->
